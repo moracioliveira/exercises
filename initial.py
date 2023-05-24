@@ -3,5 +3,7 @@ import sys
 #Expected result:
 #3.8.10
 
-
-print(sys.version)
+#possible solutions
+#==================
+# print(sys.version[:sys.version.find(" ")])
+# print(sys.version.split()[0])
