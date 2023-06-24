@@ -29,3 +29,27 @@ You only need to define classes and the appropriate test methods.
 During the solution verification, the tests are run and in case of any errors,
 the test report will be printed to the console.
 """
+
+
+import unittest
+
+
+# Enter your solution here
+class TestStartsWithMethod(unittest.TestCase):
+
+    def test_startswith_one_letter(self):
+        assert 'unittest'.startswith('u')
+        assert 'unittest'.startswith('U')
+
+    def test_startswith_four_letters(self):
+        assert 'http://www.e-smartdata.org/'.startswith('http')
+        assert 'www.e-smartdata.org/'.startswith('http')
+
+class TestEndsWithMethod(unittest.TestCase):
+
+    def test_endswith_three_letter(self):
+        assert 'e-smartdata.org'.endswith('org')
+        assert 'e-smartdata.org'.endswith('com')
+
+if __name__ == '__main__':
+    unittest.main()
