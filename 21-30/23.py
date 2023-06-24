@@ -31,3 +31,30 @@ of the Rectangle class by creating a new instance of the class
 with three different width and height values, calling the area() method,
 and checking that the return value matches the expected result using the assertEqual() method.
 """
+import unittest
+
+
+class TestRectangle(unittest.TestCase):
+
+    def test_area_with_nonzero_dimensions(self):
+        self.assertTrue(isinstance(Rectangle(2.0,3.0).area(), float))
+
+    def test_area_with_zero_dimensions(self):
+        self.assertTrue(isinstance(Rectangle(0, 0).area(), int))
+
+    def test_area_with_negative_width(self):
+        with self.assertRaises(ValueError):
+            Rectangle(-1, 5).area()
+
+    def test_area_with_negative_height(self):
+        with self.assertRaises(ValueError):
+            Rectangle(5, -5).area()
+
+    def test_area_with_float_dimensions(self):
+        self.assertTrue(isinstance(Rectangle(2.5, 3.5).area(), float))
+
+    def test_area_with_large_dimensions(self):
+        self.assertTrue(isinstance(Rectangle(100.0, 300.0).area(), float))
+
+if __name__ == '__main__':
+    unittest.main()
